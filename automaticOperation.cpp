@@ -1,8 +1,5 @@
 #include <iostream>
 #include <ctime>
-#include <cstdlib>
-#include <chrono>
-#include <thread>
 #include <conio.h>
 
 #include "queue.h"
@@ -34,22 +31,18 @@ void processQueue(queue* queueEx, int countItems, bool isAddition) {
                 queueEx->dequeue();
                 deleted++;
             }
-            if (deleted == countItems) {
-                std::cout << "Удалено " << countItems << " элемент(а/ов) из очереди." << std::endl;
-            }
-            else {
-                std::cout << "Удалено " << deleted << "из заданных " << countItems<< " элемент(а/ов) из очереди." << std::endl;
-            }
+            std::cout << "Удалено " << deleted << " элемент(а/ов) из очереди." << std::endl;
         }
         else {
-            std::cout << "Очередь пуста. Невозможно удалить элемент(ы)." << std::endl;
+            std::cerr << "Очередь пуста. Невозможно удалить элемент(ы)." << std::endl;
         }
     }
     queueEx->returnStateQueue();
+    std::cout << std::endl;
 }
 
 void automaticOperation(queue* queueEx) {
-    int userInput = 0; // Изменили тип переменной
+    int userInput = 0; 
     clock_t lastChangeTime = clock();
     const double changeInterval = 5.0;
 

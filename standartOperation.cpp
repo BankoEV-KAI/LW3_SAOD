@@ -1,9 +1,8 @@
 #include "operation.h"
 #include "menu.h"
-
-#include <iostream>
 #include "operation.h"
 
+#include <iostream>
 
 
 void standartOperation(queue* queueEx) {

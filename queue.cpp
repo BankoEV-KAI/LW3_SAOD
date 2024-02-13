@@ -15,6 +15,7 @@ queue::~queue() {
 	}
 	delete front;
 	delete rear;
+    std::cout << "Очередь очищена." << std::endl;
 }
 
 bool queue::isEmpty()
@@ -45,7 +46,7 @@ void queue::enqueue(char value)
 void queue::dequeue()
 {
     if (isEmpty()) {
-        std::cout << "Очередь пуста, невозможно удалить элемент.\n";
+        std::cerr << "Очередь пуста, невозможно удалить элемент.\n";
         return;
     }
 
@@ -72,7 +73,7 @@ void queue::returnStateQueue()
         std::cout << "очередь пуста" << std::endl;
     }
     else {
-        std::cout <<" очередь не пуста"<< std::endl
+        std::cout <<"очередь не пуста"<< std::endl
             << "первый элемент: " << front->data << std::endl
             << "последний элемент: " << rear->data << std::endl
             << "количество элементов в очереди: " << count << std::endl;

@@ -14,6 +14,7 @@ void main() {
 		switch (operation)
 		{
 		case 0:
+			mainQueue->~queue();
 			return;
 		case 1: //стандартная работа
 			standartOperation(mainQueue);
